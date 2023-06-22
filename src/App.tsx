@@ -6,11 +6,17 @@ function App() {
     console.log("App rendering");
     return (
         <div>
-            This is APP component
+            <PageTitle title={"This is APP component"}/>
+            <PageTitle title={"Second component"}/>
             <Cars/>
-            <Rating/>
-            <Accordion/>
-            <Rating/>
+            <Accordion titleValue={"Accordion title"} collapsed={false}/>
+            <Accordion titleValue={"Second title"} collapsed={true}/>
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
     );
 };
@@ -28,7 +34,12 @@ function Cars() {
     )
 };
 
-;
+type PageTitlePropsType = {
+    title: string
+}
 
-;
+function PageTitle(props: PageTitlePropsType) {
+    return <h1>{props.title}</h1>
+}
+
 export default App;
